@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.bar.json",
+  "monitor": 0,
+  "font_family": "Agave Nerd Font",
+  "transparency_alpha": 122,
+  "icon_scale": 1,
+  "margin":{
+    "horizontal": 20,
+    "vertical": 20
+  },
+  "theme": {
+    "palette": "Base16",
+    "name": "RosePine",
+    "accent": "Base0D"
+  },
+  "left_widgets": [
+    {
+      "Komorebi": {
+        "workspaces": {
+          "enable": true,
+          "hide_empty_workspaces": false
+        },
+        "layout": {
+          "enable": true
+        },
+        "focused_window": {
+          "enable": true,
+          "show_icon": true
+        }
+      }
+    }
+  ],
+  "right_widgets": [
+    {
+      "Update": {
+        "enable": true
+      }
+    },
+    {
+      "Storage": {
+        "enable": false,
+        "label_prefix": "Text"
+      }
+    },
+    {
+      "Memory": {
+        "enable": true
+      }
+    },
+    {
+      "Network": {
+        "enable": true,
+        "show_total_data_transmitted": true,
+        "show_network_activity": true
+      }
+    },
+    {
+      "Keyboard": {
+        "enable": true,
+        "label_prefix": "Text"
+      }
+    },
+    {
+      "Date": {
+        "enable": true,
+        "label_prefix":"None",
+        "format": "YearMonthDate"
+      }
+    },
+    {
+      "Time": {
+        "enable": true,
+        "format": "TwentyFourHour"
+      }
+    },
+    {
+      "Battery": {
+        "enable": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
+	"komorebi-bar": {
+		"ignore": [
+		  {
+		    "kind": "Exe",
+		    "id": "komorebi-bar.exe",
+		    "matching_strategy": "Equals"
+		  }
+		]
+	    },
+	    "komorebi-gui": {
+		"ignore": [
+		  {
+		    "kind": "Exe",
+		    "id": "komorebi-gui.exe",
+		    "matching_strategy": "Equals"
+		  }
+		]
+	    }
+}
