@@ -6,15 +6,38 @@ local appearance = require("appearance")
 
 local COLOR_TRANSPARENT = "rgba(0% 0% 0% 0%)"
 
-config.window_background_image = "C:/Users/Samuel/Pictures/Mountain Pictures/purple.jpg"
+local IMAGE_BG = {
+	[0]=(wezterm.config_dir .. "/assets/clr.jpeg"),
+	[1]=(wezterm.config_dir .. "/assets/bg.jpg"),
+}
+local FLAT_COLOR = {
+	source = {File = IMAGE_BG[0]},
+	repeat_x = "NoRepeat",
+	repeat_y = "NoRepeat",
+	opacity = 1.0
+}
+local IMAGE = {
+	source = { File = IMAGE_BG[1] },
+	opacity = 0.2,
+	hsb = {
+		brightness = 0.05
+	}
+} 
+
+
+config.background = {
+	-- rendered first, deep
+	FLAT_COLOR,	
+	IMAGE,
+	-- rendered last
+}
+--[[
+config.window_background_image = "~/.config/wezterm/bg.jpg"
 config.window_background_image_hsb = {
 	brightness = 0.1
 }
-if appearance.is_dark() then
-	config.color_scheme = "Rosé Pine (Gogh)"
-else
-	config.color_scheme = "Rosé Pine Dawn (Gogh)"
-end
+--]]
+config.color_scheme = "Atlas (base16)"
 
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 
@@ -31,6 +54,12 @@ config.window_frame = {
 config.font = wezterm.font({ family = "Monofur Nerd Font", weight = "Regular" })
 config.font_size = 13
 config.hide_tab_bar_if_only_one_tab = true
+config.window_padding = {
+	left = "2cell",
+	right = "2cell",
+	top = "1cell",
+	bottom = "0.5cell",
+}
 
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
