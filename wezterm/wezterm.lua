@@ -18,9 +18,10 @@ local FLAT_COLOR = {
 }
 local IMAGE = {
 	source = { File = IMAGE_BG[1] },
-	opacity = 0.2,
+	opacity = 0.136,
 	hsb = {
-		brightness = 0.05
+		saturation = 1.25,
+		hue = 2.0,
 	}
 } 
 
@@ -44,14 +45,20 @@ config.default_prog = { "pwsh.exe", "-NoLogo" }
 --config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_frame = {
-	font = wezterm.font({ family = "3270 Nerd Font", weight = "Bold" }),
-	font_size = 12,
+	font = wezterm.font_with_fallback {
+		{ family = "Monofur Nerd Font", weight = "Bold" },
+		{ family = "Cascadia Next JP", weight = "Bold" }
+	},
+	font_size = 13,
 	inactive_titlebar_bg = COLOR_TRANSPARENT,
 	active_titlebar_bg = COLOR_TRANSPARENT,
 	button_fg = COLOR_TRANSPARENT,
 	button_bg = COLOR_TRANSPARENT,
 }
-config.font = wezterm.font({ family = "Monofur Nerd Font", weight = "Regular" })
+config.font = wezterm.font_with_fallback {
+	{ family = "Monofur Nerd Font", weight = "Regular" },
+	{ family = "Cascadia Next JP", weight = "Light" },
+} -- ああ
 config.font_size = 13
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
